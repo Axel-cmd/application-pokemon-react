@@ -9,34 +9,26 @@ function App() {
 
   const getAllPokemons = async () => {
     const res = await fetch(loadPokemon)
-    const data = await res.json()
+    const { results: pokemons } = await res.json()
 
-    setLoadPokemon(data.next)
-    // console.log(data)
-
-    function createPokemonObject(result)
-    {
-      result.forEach( async (pokemon) => {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-        const data = await res.json()
-
-        setAllPokemons(currentList => [...currentList, data])
-      
-      });
-    }
-    
-    createPokemonObject(data.results)
-    await console.log(allPokemon);
+    const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
+      const res = await fetch(url)
+      return res.json()
+    }));
+    setAllPokemons(pokemonBatch);
   }
 
-  
+
   useEffect(() => {
     getAllPokemons()
   }, [])
 
   return (
     <div className="App">
-      {/* {console.log(allPokemon)} */}
+      <ul>
+
+      {allPokemon.map((pokemon)=>(<li>{pokemon.name}</li>))}
+      </ul>
     </div>
   );
 }
