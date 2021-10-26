@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(allPokemon)}
+      {/* {console.log(allPokemon)} */}
     </div>
   );
 }
