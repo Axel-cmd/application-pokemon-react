@@ -1,11 +1,10 @@
 import './App.css';
-import { Select } from '@material-ui/core'
 
+// Test
 function App() {
   return (
     <div className="App">
       test
-      <Select></Select>
     </div>
   );
 }
