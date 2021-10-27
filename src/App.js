@@ -1,7 +1,7 @@
 import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
-import Pagination from './pagination/Pagination'
+import Listpokemon from './Listpokemon.1';
 
 function App() {
 
@@ -9,38 +9,31 @@ function App() {
   const [loadPokemon, setLoadPokemon] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
   const getAllPokemons = async () => {
-    //requête pour récupérer les 20 premiers pokémons
     const res = await fetch(loadPokemon)
-    const { results: pokemons, next, previous } = await res.json()
-    // console.log(next)
-    setLoadPokemon(next);
+    const { results: pokemons } = await res.json()
 
-    //fait une requete pour chaque pokémon
     const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
       const res = await fetch(url)
       return res.json()
     }));
-    setAllPokemons(pokemonBatch);
-  }
+    setAllPokemons(pokemonBatch);}
 
-
-
-  useEffect(() => {
-    getAllPokemons()
+    useEffect(() => {getAllPokemons()
   }, [])
 
   return (
     <div className="App">
-      <ul>
-
-      {allPokemon.map((pokemon, key)=>(<li key={key}>{pokemon.name}</li>))}
-      </ul>
-
-
-      <Pagination items={allPokemon}/>
-      <button onClick={() => getAllPokemons()}>next page</button>
+      <div className="all-container">
+        {console.log(allPokemon)}
+        {allPokemon.map((pokemon, index) =>
+        <Listpokemon
+        id={pokemon.id}
+        name={pokemon.name}
+        image={pokemon.sprites.other.dream_world.front_default}
+        key={index} /> 
+        )} 
+      </div>
     </div>
-  );
-}
+  )};
 
 export default App;
