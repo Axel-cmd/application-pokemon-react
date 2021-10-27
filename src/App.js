@@ -1,6 +1,7 @@
 import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
+import Listpokemon from './Listpokemon.1';
 
 function App() {
 
@@ -15,22 +16,24 @@ function App() {
       const res = await fetch(url)
       return res.json()
     }));
-    setAllPokemons(pokemonBatch);
-  }
+    setAllPokemons(pokemonBatch);}
 
-
-  useEffect(() => {
-    getAllPokemons()
+    useEffect(() => {getAllPokemons()
   }, [])
 
   return (
     <div className="App">
-      <ul>
-
-      {allPokemon.map((pokemon)=>(<li>{pokemon.name}</li>))}
-      </ul>
+      <div className="all-container">
+        {console.log(allPokemon)}
+        {allPokemon.map((pokemon, index) =>
+        <Listpokemon
+        id={pokemon.id}
+        name={pokemon.name}
+        image={pokemon.sprites.other.dream_world.front_default}
+        key={index} /> 
+        )} 
+      </div>
     </div>
-  );
-}
+  )};
 
 export default App;
