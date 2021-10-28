@@ -1,18 +1,16 @@
 import React from "react";
 
 function Listpokemon({id, name, image, type}) {
+    const style = type + " thumb-container";
     return (
-        <div className="listpokemon">
-            <div className="number">
-                <small>#0{id}</small>
+        <div className={style}>
+            <div className="number"><small>#0{id}</small></div>
+            <img src={image} alt={name} />
+            <div className="detail-wrapper">
+                <h3>{name}</h3>
+                <small>Type: {type}</small>
             </div>
-            <img src={image} />
-            <div className="detail-wrapper"></div>
-            <h3>{name}</h3>
-            <small>{type}</small>
-
         </div>
-    );
+    )
 }
-
 export default Listpokemon

@@ -22,18 +22,23 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="app-contaner">
+    <h1>Pokemon Evolution</h1>
+    <div className="pokemon-container">
       <div className="all-container">
-        {console.log(allPokemon)}
-        {allPokemon.map((pokemon, index) =>
-        <Listpokemon
-        id={pokemon.id}
-        name={pokemon.name}
-        image={pokemon.sprites.other.dream_world.front_default}
-        key={index} /> 
-        )} 
+        {allPokemon.map( (pokemon, index) => 
+          <Listpokemon
+            key={index}
+            id={pokemon.id}
+            image={pokemon.sprites.other.dream_world.front_default}
+            name={pokemon.name}
+            type={pokemon.types[0].type.name}
+          />)}
+        
       </div>
     </div>
-  )};
+  </div>
+);
+}
 
 export default App;
