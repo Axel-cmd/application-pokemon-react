@@ -1,7 +1,7 @@
 import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
-import Listpokemon from './Listpokemon';
+import Listpokemon from './listpokemon';
 
 function App() {
 
