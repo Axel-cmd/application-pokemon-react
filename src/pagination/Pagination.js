@@ -1,23 +1,21 @@
 import React, {  useState, useEffect } from 'react';
-
+import { Button } from '@material-ui/core'
 import './pagination.css'
 
 
 function Paginate(props) {
 
-    
-    
-
-    const handlePageClick = () =>{
-        
-        // console.log(data.selected)
-        // props.onChange(data.selected)
+    const handlePage = () =>
+    {
+        props.onChangePage();
     }
+
 
     return(
         <>
-            {/* <button onClick={}>Précédent</button>
-            <button onClick={}>Suivant</button> */}
+            <Button variant="contained" size="large" onClick={handlePage}>
+                {props.type}
+            </Button>
         </>
     )
 }

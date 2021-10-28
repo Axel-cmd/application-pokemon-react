@@ -1,5 +1,5 @@
 import './App.css';
-// import { Select } from '@material-ui/core'
+// import { Button } from '@material-ui/core'
 import { useState, useEffect } from 'react';
 import Listpokemon from './listpokemon';
 import Pagination from './pagination/Pagination'
@@ -7,23 +7,20 @@ import Pagination from './pagination/Pagination'
 function App() {
 
   const [previousPage, setPrevious] = useState('');
-  const [nextPage, setNext] = useState('')
+  const [nextPage, setNext] = useState('');
 
-  const [allPokemon, setAllPokemons] = useState([])
+  const [allPokemon, setAllPokemons] = useState([]);
   const [loadPokemon, setLoadPokemon] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
   const getAllPokemons = async (url) => {
     // console.log(loadPokemon)
-    const res = await fetch(url)
-    const { results: pokemons, next, previous } = await res.json()
+    const res = await fetch(url);
+    const { results: pokemons, next, previous } = await res.json();
 
-    // console.log(next)
-    
-    // console.log(nextPage)
 
     const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
-      const res = await fetch(url)
-      return res.json()
+      const res = await fetch(url);
+      return res.json();
     }));
     setAllPokemons(pokemonBatch);
     // console.log(allPokemon)
@@ -33,7 +30,7 @@ function App() {
 
 
   useEffect(() => {
-    getAllPokemons(loadPokemon)
+    getAllPokemons(loadPokemon);
   
   }, [])
 
@@ -41,17 +38,16 @@ function App() {
   const setPreviousPage = async () =>
   {
     
-    if(previousPage != null){
-
-      getAllPokemons(previousPage)
+    if(previousPage != null)
+    {
+      getAllPokemons(previousPage);
     }
   }
 
   const setNextPage = async () => {
     if(nextPage != null)
     {
-
-      getAllPokemons(nextPage)
+      getAllPokemons(nextPage);
     }
   }
   
@@ -71,11 +67,19 @@ function App() {
       </div>
       
 
-
-
-      <button onClick={setPreviousPage}>Précédent</button>
-      <button onClick={setNextPage}>Suivant</button>
+      {/* <Pagination onChangePage={(value) => {
+        if(value == "next")
+        {
+          setNextPage()
+        }else 
+        {
+          setPreviousPage()
+        }
+      }}/> */}
       
+      <Pagination onChangePage={setPreviousPage} type="Précédent"/>
+      <Pagination onChangePage={setNextPage} type="Suivant"/>
+
     </div>
   </div>
 );
