@@ -1,30 +1,49 @@
 import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
-import Listpokemon from './Listpokemon';
+import Listpokemon from './listpokemon';
+import Pagination from './pagination/Pagination'
 
 function App() {
+
+  const [page, setPage] = useState('')
 
   const [allPokemon, setAllPokemons] = useState([])
   const [loadPokemon, setLoadPokemon] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
   const getAllPokemons = async () => {
     const res = await fetch(loadPokemon)
-    const { results: pokemons } = await res.json()
+    const { results: pokemons, next } = await res.json()
+
+    // console.log('https://pokeapi.co/api/v2/pokemon?offset=40&limit=20')
+    // setLoadPokemon(next);
 
     const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
       const res = await fetch(url)
       return res.json()
     }));
-    setAllPokemons(pokemonBatch);}
+    setAllPokemons(pokemonBatch);
+  
+  }
 
-    useEffect(() => {getAllPokemons()
+
+  useEffect(() => {
+    getAllPokemons()
+  
   }, [])
 
+
+  // const handleChangePage = async (currentPage) =>{
+  //   let value = (currentPage+1)*2 
+
+  //   console.log(value+'0');
+  //   // let url = `https://pokeapi.co/api/v2/pokemon?offset=40&limit=20`;
+  // }
+  
   return (
     <div className="App">
       <div className="all-container">
-        {console.log(allPokemon)}
+        {/* {console.log(allPokemon)} */}
         {allPokemon.map((pokemon, index) =>
         <Listpokemon
         id={pokemon.id}
@@ -33,6 +52,8 @@ function App() {
         key={index} /> 
         )} 
       </div>
+      <Pagination items={allPokemon} onChange={(e) =>{setPage(e.selected); console.log(page)}}/>
+      {/* <button onClick={getAllPokemons}>test</button> */}
     </div>
   )};
 

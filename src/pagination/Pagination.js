@@ -15,7 +15,9 @@ function Paginate(props) {
     console.log(items)
 
     const handlePageClick = (data) =>{
-        console.log(data.selected);
+        
+        console.log(data.selected)
+        props.onChange(data.selected)
     }
 
     return(
