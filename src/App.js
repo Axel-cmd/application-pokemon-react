@@ -2,7 +2,10 @@ import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
 import Listpokemon from './listpokemon';
+<<<<<<< HEAD
 import Pagination from './pagination/Pagination'
+=======
+>>>>>>> develop
 
 function App() {
 
@@ -41,8 +44,11 @@ function App() {
   // }
   
   return (
-    <div className="App">
+    <div className="app-contaner">
+    <h1>Pokemon Evolution</h1>
+    <div className="pokemon-container">
       <div className="all-container">
+<<<<<<< HEAD
         {/* {console.log(allPokemon)} */}
         {allPokemon.map((pokemon, index) =>
         <Listpokemon
@@ -51,10 +57,23 @@ function App() {
         image={pokemon.sprites.other.dream_world.front_default}
         key={index} /> 
         )} 
+=======
+        {allPokemon.map( (pokemon, index) => 
+          <Listpokemon
+            key={index}
+            id={pokemon.id}
+            image={pokemon.sprites.other.dream_world.front_default}
+            name={pokemon.name}
+            type={pokemon.types[0].type.name}
+          />)}
+        
+>>>>>>> develop
       </div>
       <Pagination items={allPokemon} onChange={(e) =>{setPage(e.selected); console.log(page)}}/>
       {/* <button onClick={getAllPokemons}>test</button> */}
     </div>
-  )};
+  </div>
+);
+}
 
 export default App;
