@@ -2,7 +2,7 @@ import './App.css';
 // import { Select } from '@material-ui/core'
 import { useState, useEffect } from 'react';
 import Listpokemon from './listpokemon';
-import Accueil from './Accueil';
+// import Accueil from './Accueil';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {

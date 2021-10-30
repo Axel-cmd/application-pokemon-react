@@ -1,35 +1,35 @@
-import React from "react";
-import 'bootstrap/dist/css/boostrap.css'
-import { Nav, navbar, NavDropdown } from 'react-bootstrap'
+// import React from "react";
+// import 'bootstrap/dist/css/boostrap.css'
+// import { Nav, navbar, NavDropdown } from 'react-bootstrap'
 
 
-function Accueil(){
-    return(
-        <div className="Acceuil">
-        <Navbar bg="dark" variant="dark" expand="lg">
+// function Accueil(){
+//     return(
+//         <div className="Acceuil">
+//         <Navbar bg="dark" variant="dark" expand="lg">
 
-        <navbar.Brand>
-            Pokemon
-            <img src={pokemeaccueil.png} />
-        </navbar.Brand>
+//         <navbar.Brand>
+//             Pokemon
+//             <img src={pokemeaccueil.png} />
+//         </navbar.Brand>
 
-        <Nav>
+//         <Nav>
 
-            <Nav.link href="Recherche">Recherche</Nav.link>
+//             <Nav.link href="Recherche">Recherche</Nav.link>
 
-            <NavDropdown title="Parametre">
-                <Navdropdouwn.Item href="Paremetre/Profil"></Navdropdouwn.Item>
-                <Navdropdouwn.Item href="Parametre/Notifications"></Navdropdouwn.Item>
-                <Navdropdouwn.Item href="Parametre/Sécurité"></Navdropdouwn.Item>
-                <NavDropdown.Item href="Parametre/Deconnection"></NavDropdown.Item>
-                <NavDropdown.Divider/>
+//             <NavDropdown title="Parametre">
+//                 <Navdropdouwn.Item href="Paremetre/Profil"></Navdropdouwn.Item>
+//                 <Navdropdouwn.Item href="Parametre/Notifications"></Navdropdouwn.Item>
+//                 <Navdropdouwn.Item href="Parametre/Sécurité"></Navdropdouwn.Item>
+//                 <NavDropdown.Item href="Parametre/Deconnection"></NavDropdown.Item>
+//                 <NavDropdown.Divider/>
 
-            </NavDropdown>
-        </Nav>
-        </Navbar>
+//             </NavDropdown>
+//         </Nav>
+//         </Navbar>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default Accueil; 
+// export default Accueil; 
