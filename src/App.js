@@ -68,19 +68,11 @@ function App() {
         )} 
       </div>
       
-
-      {/* <Pagination onChangePage={(value) => {
-        if(value == "next")
-        {
-          setNextPage()
-        }else 
-        {
-          setPreviousPage()
-        }
-      }}/> */}
+      <div>
+        <Pagination className="pagination" onChangePage={setPreviousPage} type="Précédent"/>
+        <Pagination className="pagination" onChangePage={setNextPage} type="Suivant"/>
+      </div>
       
-      <Pagination onChangePage={setPreviousPage} type="Précédent"/>
-      <Pagination onChangePage={setNextPage} type="Suivant"/>
 
     </div>
   </div>
