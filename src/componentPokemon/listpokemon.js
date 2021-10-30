@@ -2,7 +2,9 @@ import './listPokemon.css'
 import React from "react";
 
 function Listpokemon({id, name, image, type}) {
-    const style = type + " thumb-container";
+    const style = `avatar-background thumb-container ${type}`;
+    console.log(style);
+    
     return (
         <div className={style}>
             <div className="number"><small>#0{id}</small></div>
