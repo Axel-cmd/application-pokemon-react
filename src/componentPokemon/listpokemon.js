@@ -1,3 +1,4 @@
+import './listPokemon.css'
 import React from "react";
 
 function Listpokemon({id, name, image, type}) {
