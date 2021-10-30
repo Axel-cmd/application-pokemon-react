@@ -25,7 +25,11 @@ h3 {
 }
 .thumb-container small {
   text-transform: capitalize;
+  height: 50px;
+  width: 100%;
+  padding-top: 50px;
 }
+
 .detail-wrapper {
   display: flex;
   flex-direction: column;
@@ -41,6 +45,11 @@ h3 {
   background-color: rgba(0, 0, 0, 0.185);
 }
 
+
+.logo{
+  max-width: 20px;
+  max-height: 20px;
+}
 
 .avatar-background {
   background: linear-gradient(

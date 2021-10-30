@@ -3,15 +3,17 @@ import React from "react";
 
 function Listpokemon({id, name, image, type}) {
     const style = `avatar-background thumb-container ${type}`;
-    console.log(style);
+    const typeImg = `${process.env.PUBLIC_URL}/type-icons/${type}.png`
     
     return (
         <div className={style}>
             <div className="number"><small>#0{id}</small></div>
             <img src={image} alt={name} />
             <div className="detail-wrapper">
+                <small>
+                    <img className="logo" src={typeImg}/>  
+                </small>
                 <h3>{name}</h3>
-                <small>Type: {type}</small>
             </div>
         </div>
     )
