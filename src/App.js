@@ -2,12 +2,9 @@ import './App.css';
 // import { Button } from '@material-ui/core'
 import { useState, useEffect } from 'react';
 import Listpokemon from './listpokemon';
-<<<<<<< HEAD
 // import Accueil from './Accueil';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-=======
 import Pagination from './pagination/Pagination'
->>>>>>> axel-test
 
 function App() {
 
