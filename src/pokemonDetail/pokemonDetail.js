@@ -35,11 +35,11 @@ export default function PokemonDetail ()
         
         
         <Paper style={{margin:10, marginTop:20}}>
-        <Grid container>
+        <Grid container spacing={2}>
 
-            <Grid item container xs={12} justifyContent='space-around'>
+            <Grid item container spacing={2} xs={12}>
                 
-                <Grid item md={6} xs={6}>
+                <Grid item md={6} xs={6} style={{paddingLeft:20}}>
                     test
                 </Grid>
                 <Grid item md={6} xs={6} style={{textAlign:'right'}}>
@@ -49,17 +49,18 @@ export default function PokemonDetail ()
            
             
 
-            <Grid item xs={12} container>
-                <Grid item xs={2}>
-                
+            <Grid item xs={12} container spacing={2}>
+                <Grid item xs={2} >
+                    <Paper>
                     {pokemon != null &&
-                    <PokemonCard
+                    <PokemonCard 
                     className="pokemonCardStyle"
                     id={pokemon.id}
                     name={pokemon.name}
                     image={pokemon.sprites.other.dream_world.front_default}
                     types={pokemon.types}
                     /> }
+                    </Paper>
                 </Grid>
                     
 
