@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 
 
 
-function PokemonCard({id, name, image, type}) {
-    const style = `avatar-background thumb-container ${type}`;
-    const typeImg = `${process.env.PUBLIC_URL}/type-icons/${type}.png`
+function PokemonCard({id, name, image, types}) {
+    const style = `avatar-background thumb-container ${types[0].type.name}`;
+    // const typeImg = `${process.env.PUBLIC_URL}/type-icons/${type}.png`
     
     return (
         <Link to={`/pokemon/${id}`} className="linkStyle" >
@@ -15,7 +15,12 @@ function PokemonCard({id, name, image, type}) {
                 <img src={image} alt={name} />
                 <div className="detail-wrapper">
                     <small>
-                        <img alt={type} className="logo" src={typeImg}/>  
+                        {types.map((type, index) =>
+                            
+                            <img key={index} alt={type.type.name} className="logo" src={`${process.env.PUBLIC_URL}/type-icons/${type.type.name}.png`}/>  
+                            
+                            
+                        )}
                         
                     </small>
                     <h3>{name}</h3>

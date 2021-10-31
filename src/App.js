@@ -15,8 +15,6 @@ function App() {
     <h1>Pokemon Evolution</h1>
 
     <BrowserRouter>
-
-      {/* <ListPokemon/> */}
       <Switch>
         <Route exact path="/" render={() => {
           return(

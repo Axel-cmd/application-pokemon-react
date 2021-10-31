@@ -18,6 +18,8 @@ export default function PokemonDetail ()
     {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const result = await res.json();
+        
+        console.log(result.types)
 
         setPokemon(result)
         // console.log(result);
@@ -36,7 +38,7 @@ export default function PokemonDetail ()
             id={pokemon.id}
             name={pokemon.name}
             image={pokemon.sprites.other.dream_world.front_default}
-            type={pokemon.types[0].type.name}
+            types={pokemon.types}
             /> }
             
             

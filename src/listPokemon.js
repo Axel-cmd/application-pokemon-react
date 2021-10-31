@@ -16,7 +16,7 @@ function ListPokemon() {
     const res = await fetch(url);
     const { results: pokemons, next, previous } = await res.json();
 
-    
+
 
     const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
       const res = await fetch(url);
@@ -61,7 +61,7 @@ function ListPokemon() {
           id={pokemon.id}
           name={pokemon.name}
           image={pokemon.sprites.other.dream_world.front_default}
-          type={pokemon.types[0].type.name}
+          types={pokemon.types}
           
           key={index} /> 
           )} 
