@@ -16,6 +16,7 @@ function PokemonCard({id, name, image, type}) {
                 <div className="detail-wrapper">
                     <small>
                         <img alt={type} className="logo" src={typeImg}/>  
+                        
                     </small>
                     <h3>{name}</h3>
                 </div>
