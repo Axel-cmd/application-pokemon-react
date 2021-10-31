@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  margin: 0;
   padding: 3rem 0.5rem;
 }
 .pokemon-container {
