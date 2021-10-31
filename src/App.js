@@ -3,16 +3,17 @@ import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 import  {useEffect } from 'react';
 import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
-
+import Header from './Header/Header'
 function App() {
 
   useEffect(() => {
     <Link to="/home" />
   }, [])
-  
+
   return (
+    <>
+    <Header/>
   <div className="app-contaner">
-    <h1>Pokemon Evolution</h1>
 
     <BrowserRouter>
       <Switch>
@@ -26,6 +27,7 @@ function App() {
       </Switch>
     </BrowserRouter>
   </div>
+  </>
 );
 }
 
