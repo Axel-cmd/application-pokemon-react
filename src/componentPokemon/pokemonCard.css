@@ -10,8 +10,10 @@
   min-width: 160px;
   text-align: center;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+
 }
 h3 {
+  margin-top: 0;
   margin-bottom: 0.2rem;
 }
 .thumb-container .number {
@@ -22,12 +24,13 @@ h3 {
 .thumb-container img {
   width: 120px;
   height: 120px;
+  
 }
 .thumb-container small {
-  text-transform: capitalize;
-  height: 50px;
+  /* height: 50px; */
   width: 100%;
-  padding-top: 50px;
+  padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .detail-wrapper {
@@ -43,6 +46,11 @@ h3 {
   border-radius: 0.2rem;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.185);
+}
+
+.linkStyle{
+  text-decoration: none;
+  color: black;
 }
 
 
