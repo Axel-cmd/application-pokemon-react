@@ -7,3 +7,10 @@
   height: 40px;
   right:;
 }
+
+.menu{
+position: relative;
+float: right;
+margin-left: 0;
+width: 100%;
+}
