@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 import  {useEffect } from 'react';
 import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
@@ -17,10 +17,15 @@ function App() {
     <BrowserRouter>
 
       {/* <ListPokemon/> */}
-
-      <Route path="/home" component={ListPokemon} />
-      <Route path="/pokemon/:id" component={PokemonDetail}/>
-
+      <Switch>
+        <Route exact path="/" render={() => {
+          return(
+            <Redirect to="/home" />
+          )
+        }} />
+        <Route path="/home" component={ListPokemon} />
+        <Route path="/pokemon/:id" component={PokemonDetail}/>
+      </Switch>
     </BrowserRouter>
   </div>
 );
