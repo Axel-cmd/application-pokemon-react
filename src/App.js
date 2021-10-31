@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
 import Header from './Header/Header'
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Header/>
-  <div className="app-contaner">
+  
 
     <BrowserRouter>
       <Switch>
@@ -22,7 +22,7 @@ function App() {
         <Route path="/pokemon/:id" component={PokemonDetail}/>
       </Switch>
     </BrowserRouter>
-  </div>
+  
   </>
 );
 }

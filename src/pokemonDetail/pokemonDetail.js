@@ -3,7 +3,7 @@ import {
     useParams,
     Link
   } from "react-router-dom"
-import { Button } from '@material-ui/core';
+import { Button, Grid, Paper } from '@material-ui/core';
 import PokemonCard from '../componentPokemon/pokemonCard'
 
 
@@ -31,20 +31,68 @@ export default function PokemonDetail ()
 
 
     return(
-        <>
-            {pokemon != null &&
-            <PokemonCard
-            className="pokemonCardStyle"
-            id={pokemon.id}
-            name={pokemon.name}
-            image={pokemon.sprites.other.dream_world.front_default}
-            types={pokemon.types}
-            /> }
+        
+        
+        
+        <Paper style={{margin:10, marginTop:20}}>
+        <Grid container>
+
+            <Grid item container xs={12} justifyContent='space-around'>
+                
+                <Grid item md={6} xs={6}>
+                    test
+                </Grid>
+                <Grid item md={6} xs={6} style={{textAlign:'right'}}>
+                    test
+                </Grid>
+            </Grid>
+           
             
-            
-            
-            
-            <Link className="linkStyle" to="/home"><Button>Back</Button></Link>
-        </>
+
+            <Grid item xs={12} container>
+                <Grid item xs={2}>
+                
+                    {pokemon != null &&
+                    <PokemonCard
+                    className="pokemonCardStyle"
+                    id={pokemon.id}
+                    name={pokemon.name}
+                    image={pokemon.sprites.other.dream_world.front_default}
+                    types={pokemon.types}
+                    /> }
+                </Grid>
+                    
+
+                <Grid item container xs={10}>
+
+                        <Grid item xs={6}>
+                            BIO
+                        </Grid>
+                        <Grid item xs={6}>
+                            Training
+                        </Grid>
+                        <Grid item xs={12}>
+                        Evolution
+                        </Grid>
+                        <Grid item xs={12}>
+                            Stats
+                        </Grid>
+
+                </Grid>
+
+                    
+
+                
+
+            </Grid>
+
+
+            <Grid item md={3} xs={12}>
+                <Link className="linkStyle" to="/home"><Button>Back</Button></Link>
+            </Grid>
+        </Grid>
+        </Paper>
+        
+
     )
 }

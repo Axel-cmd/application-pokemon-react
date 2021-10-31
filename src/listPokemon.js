@@ -52,6 +52,7 @@ function ListPokemon() {
   }
   
   return (
+    <div className="app-contaner">
       <div className="pokemon-container">
 
         <div className="all-container">
@@ -72,7 +73,7 @@ function ListPokemon() {
           <Pagination className="pagination" onChangePage={setNextPage} type="Suivant"/>
         </div>
         
-
+        </div>
       </div>
   );
 }
