@@ -1,14 +1,10 @@
 import './App.css';
 import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
-import  {useEffect } from 'react';
 import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
 import Header from './Header/Header'
 function App() {
 
-  useEffect(() => {
-    <Link to="/home" />
-  }, [])
 
   return (
     <>
