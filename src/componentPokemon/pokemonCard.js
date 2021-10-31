@@ -1,7 +1,7 @@
-import './listPokemon.css'
+import './pokemonCard.css'
 import React from "react";
 
-function Listpokemon({id, name, image, type}) {
+function PokemonCard({id, name, image, type}) {
     const style = `avatar-background thumb-container ${type}`;
     const typeImg = `${process.env.PUBLIC_URL}/type-icons/${type}.png`
     
@@ -18,4 +18,4 @@ function Listpokemon({id, name, image, type}) {
         </div>
     )
 }
-export default Listpokemon
+export default PokemonCard
