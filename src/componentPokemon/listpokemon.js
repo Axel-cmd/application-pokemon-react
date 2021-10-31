@@ -11,7 +11,7 @@ function Listpokemon({id, name, image, type}) {
             <img src={image} alt={name} />
             <div className="detail-wrapper">
                 <small>
-                    <img className="logo" src={typeImg}/>  
+                    <img alt={type} className="logo" src={typeImg}/>  
                 </small>
                 <h3>{name}</h3>
             </div>

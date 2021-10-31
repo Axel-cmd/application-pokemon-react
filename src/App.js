@@ -10,13 +10,14 @@ function App() {
   const [nextPage, setNext] = useState('');
 
   const [allPokemon, setAllPokemons] = useState([]);
-  const [loadPokemon, setLoadPokemon] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
+  const loadPokemon = 'https://pokeapi.co/api/v2/pokemon?limit=20';
 
   const getAllPokemons = async (url) => {
     // console.log(loadPokemon)
     const res = await fetch(url);
     const { results: pokemons, next, previous } = await res.json();
 
+    
 
     const pokemonBatch = await Promise.all(pokemons.map(async ({ url }) => {
       const res = await fetch(url);
