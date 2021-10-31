@@ -1,4 +1,9 @@
 .container-header{
   width: 100%;
-  background-color: brown;
+  background-color: dimgray;
+}
+
+.img{
+  height: 40px;
+  right:;
 }
