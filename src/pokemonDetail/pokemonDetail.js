@@ -87,14 +87,15 @@ export default function PokemonDetail ()
                 <Grid item md={11} xs={11} style={{paddingLeft:20}}>
                 {previousPokemon &&
                     <Link to={`/pokemon/${previousPokemon.id}`} >
-                    <Avatar alt={previousPokemon.name} src={previousPokemon.sprites.other.dream_world.front_default} />
-                    <p style={{fontSize:10}}>previous</p></Link>}
+                    <Avatar className="linkStyle" alt={previousPokemon.name} src={previousPokemon.sprites.other.dream_world.front_default} />
+                    <p style={{fontSize:10}}>previous</p>
+                    </Link>}
                 </Grid> 
                 
                 
                 <Grid item md={1} xs={1} style={{textAlign:'right'}}>
                 {nextPokemon && 
-                    <Link to={`/pokemon/${nextPokemon.id}`} >
+                    <Link className="linkStyle" to={`/pokemon/${nextPokemon.id}`} >
                     <Avatar alt={nextPokemon.name} src={nextPokemon.sprites.other.dream_world.front_default} style={{paddingLeft:"70%"}}/>
                     <p style={{fontSize:10}}>next</p>
                     </Link>}
@@ -269,7 +270,7 @@ export default function PokemonDetail ()
 
 
             <Grid item md={3} xs={12}>
-                <Link className="linkStyle" to="/home"><Button>Back</Button></Link>
+                <Link className="linkStyle" to="/home"><Button style={{marginLeft:"5%"}} >Back</Button></Link>
             </Grid>
         </Grid>
         
