@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Box, IconButton, Typography, Button, Menu, MenuItem, SearchIcon,  } from '@material-ui/core'
+import { Button, Menu, MenuItem } from '@material-ui/core'
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import './Header.css';
 
@@ -25,23 +25,7 @@ export default function Header(){
             </React.Fragment>
           )}
         </PopupState>
-
-  const[searchTerm ,setSearchTerm] = useState("");
-  console.log(searchTerm)
-  return(
-    <div className="container-header">
-      <img className="img" src={`${process.env.PUBLIC_URL}/logo/pikacu.jpg`}alt=""/>
-        <img className="img" src={`${process.env.PUBLIC_URL}/logo/pokemon.png`}alt=""/>
-          <div className= "Search">
-            <imput type="Text"
-            placeholder="Search..."
-            onChange={(event) => {
-              setSearchTerm(event.target.value)
-            }}
-            />
-          </div>
-      </div>
+            </div>
   );
 }
 
-// export default Search;
