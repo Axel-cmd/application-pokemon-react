@@ -121,7 +121,7 @@ export default function PokemonDetail ()
 
                 <Grid item container xs={10}>
                         
-                        <Grid item xs={6}>
+                        <Grid item xs={5} spacing={2}>
                             <h2>Bio</h2>
                             
                             <Grid item container direction="column" spacing={2}>
@@ -185,7 +185,10 @@ export default function PokemonDetail ()
 
                             </p> */}
                         </Grid>
-                        <Grid item xs={6} >
+                        <Grid item xs={1} spacing={2}>
+
+                        </Grid>
+                        <Grid item xs={5} spacing={2}>
                             <h2>Training</h2>
                             
                             <Grid item container direction="column" spacing={2}>
