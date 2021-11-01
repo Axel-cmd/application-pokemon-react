@@ -20,6 +20,10 @@
   justify-content: center;
 }
 
+.linkStyle{
+  text-decoration: none;
+  color: black;
+}
 /* .App {
   text-align: center;
 }

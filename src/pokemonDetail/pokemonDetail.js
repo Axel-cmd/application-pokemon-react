@@ -5,13 +5,12 @@ import {
   } from "react-router-dom"
 import { Button, Grid, Paper, Avatar } from '@material-ui/core';
 import PokemonCard from '../componentPokemon/pokemonCard'
-
+import './pokemonDetail.css'
 
 export default function PokemonDetail ()
 {
     //récupérer le paramètre id passé dans l'url
     const { id } = useParams();
-    const [evolution, setEvolution] = useState();
     const [species, setSpecies] =  useState();
     const [pokemon, setPokemon] =  useState();
     const [show, setShow] =  useState(false);
@@ -62,8 +61,8 @@ export default function PokemonDetail ()
         setSpecies(pokemonSpecies)
 
 
-        let evolution = await getPokemon(`https://pokeapi.co/api/v2/evolution-chain/${id}/`)
-        setEvolution(evolution);
+        // let evolution = await getPokemon(`https://pokeapi.co/api/v2/evolution-chain/${id}/`)
+        // setEvolution(evolution);
         setShow(true);
     };
     
@@ -121,10 +120,53 @@ export default function PokemonDetail ()
                     
 
                 <Grid item container xs={10}>
-
+                        
                         <Grid item xs={6}>
                             <h2>Bio</h2>
-                            <p className="description">{ 
+                            
+                            <Grid item container direction="column" spacing={2}>
+
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                        { 
+                                        `${pokemon.name}, ${pokemon.types[0].type.name} ${pokemon.types[1] && `and ${pokemon.types[1].type.name}`} pokemon.
+                                        `
+                                        }
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                        Height :
+                                    </Grid>
+                                    <Grid item  className="item_content">
+                                        {pokemon.height/10}m
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                    Weight :
+                                    </Grid>
+                                    <Grid item  className="item_content">
+                                    {pokemon.weight/10}kg
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                    Abilities :
+                                    </Grid>
+                                    <Grid item  className="item_content">
+                                        {pokemon.abilities.map((abilities, index) =>
+                                            
+                                            `${abilities.ability.name } `
+                                            // console.log(abilities)
+                                        
+                                        )}
+                                    </Grid>
+                                </Grid>
+                            
+                            
+                            </Grid>
+                            {/* <p className="description">{ 
                                 `${pokemon.name}, ${pokemon.types[0].type.name} ${pokemon.types[1] && `and ${pokemon.types[1].type.name}`} pokemon.
                                 `
                                 }
@@ -141,29 +183,61 @@ export default function PokemonDetail ()
                                 }
 
 
-                            </p>
+                            </p> */}
                         </Grid>
                         <Grid item xs={6} >
                             <h2>Training</h2>
                             
+                            <Grid item container direction="column" spacing={2}>
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                        Base exp :
+                                    </Grid>
+                                    <Grid item  className="item_content">
+                                        {pokemon.base_experience}
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2}  className="item_container">
+                                    <Grid item>
+                                        Base happiness :
+                                    </Grid>
+                                    <Grid item  className="item_content">
+                                        {species.base_happiness}
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2} className="item_container">
+                                    <Grid item>
+                                        Catch rate :
+                                    </Grid>
+                                    <Grid item className="item_content">
+                                        {species.capture_rate}
+                                    </Grid>
+                                </Grid>
+                                <Grid item container spacing={2} className="item_container">
+                                    <Grid item>
+                                        Growth rate : 
+                                    </Grid>
+                                    <Grid item className="item_content">
+                                        {species.growth_rate.name}
+                                    </Grid>
+                                </Grid>
+
                                 
-                            <p>Base exp : {pokemon.base_experience}</p>
-                            <p>Base happiness : {species.base_happiness}</p>  
-                            <p>Catch rate : {species.capture_rate}</p>
-                            <p>Growth rate : {species.growth_rate.name}</p>
+                            </Grid>
                         </Grid>
 
 
 
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <h2>Evolution</h2>
 
                             {
-                                console.log(evolution)
+                             
+                             
 
                             }
 
-                        </Grid>
+                        </Grid> */}
 
 
 
