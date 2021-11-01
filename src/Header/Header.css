@@ -17,3 +17,10 @@
   align-items: inherit;
   flex-direction: column;
 }
+
+.menu{
+position: relative;
+float: right;
+margin-left: 0;
+width: 100%;
+}
