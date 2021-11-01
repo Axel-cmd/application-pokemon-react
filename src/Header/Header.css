@@ -10,3 +10,10 @@
   height: 40px;
   right: auto;
 }
+
+.search{
+  display: flex;
+  justify-content: left;
+  align-items: inherit;
+  flex-direction: column;
+}
