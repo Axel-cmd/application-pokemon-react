@@ -3,7 +3,6 @@ import { AppBar, Toolbar, Box, IconButton, Typography, Button, Menu, MenuItem, S
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import './Header.css';
 
-
 export default function Header(){
 
   return(
@@ -27,6 +26,22 @@ export default function Header(){
           )}
         </PopupState>
 
-  </div>
-)
+  const[searchTerm ,setSearchTerm] = useState("");
+  console.log(searchTerm)
+  return(
+    <div className="container-header">
+      <img className="img" src={`${process.env.PUBLIC_URL}/logo/pikacu.jpg`}alt=""/>
+        <img className="img" src={`${process.env.PUBLIC_URL}/logo/pokemon.png`}alt=""/>
+          <div className= "Search">
+            <imput type="Text"
+            placeholder="Search..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value)
+            }}
+            />
+          </div>
+      </div>
+  );
 }
+
+// export default Search;
