@@ -11,7 +11,7 @@ export default function PokemonDetail ()
 {
     //récupérer le paramètre id passé dans l'url
     const { id } = useParams();
-    const [growth, setGrowth] =  useState();
+    const [evolution, setEvolution] = useState();
     const [species, setSpecies] =  useState();
     const [pokemon, setPokemon] =  useState();
     const [show, setShow] =  useState(false);
@@ -44,7 +44,7 @@ export default function PokemonDetail ()
     
         let response = await getPokemon(`https://pokeapi.co/api/v2/pokemon/${id}`);
         setPokemon(response);
-        setShow(true);
+        
         //traitement pour le next et previous
         if( id > 1 )
         { 
@@ -57,12 +57,14 @@ export default function PokemonDetail ()
             setNextPokemon(nextResponse);
         }
 
-        //growth
-        let growthResponse = await getPokemon(`https://pokeapi.co/api/v2/growth-rate/${id}/`);
-        setGrowth(growthResponse.name)
-
+    
         let pokemonSpecies = await getPokemon(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
         setSpecies(pokemonSpecies)
+
+
+        let evolution = await getPokemon(`https://pokeapi.co/api/v2/evolution-chain/${id}/`)
+        setEvolution(evolution);
+        setShow(true);
     };
     
     
@@ -148,7 +150,7 @@ export default function PokemonDetail ()
                             <p>Base exp : {pokemon.base_experience}</p>
                             <p>Base happiness : {species.base_happiness}</p>  
                             <p>Catch rate : {species.capture_rate}</p>
-                            <p>Growth rate : {growth}</p>
+                            <p>Growth rate : {species.growth_rate.name}</p>
                         </Grid>
 
 
@@ -157,7 +159,7 @@ export default function PokemonDetail ()
                             <h2>Evolution</h2>
 
                             {
-
+                                console.log(evolution)
 
                             }
 
