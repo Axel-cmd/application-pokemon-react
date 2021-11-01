@@ -13,38 +13,80 @@ export default function PokemonDetail ()
     const { id } = useParams();
     
     const [pokemon, setPokemon] =  useState();
-    
-    const getPokemon = async () =>
-    {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        const result = await res.json();
-        
-        console.log(result.types)
+    // const [nextPokemon, setNextPokemon] = useState();
+    // const [previousPokemon, setPreviousPokemon] = useState();
 
-        setPokemon(result)
-        // console.log(result);
+
+    const getPokemon = async (id) =>
+    {
+
+        return new Promise((resolve, reject) => {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                resolve(data);
+            })
+        })
+
+        // const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        // const result = await res.json();
+        
+        // // console.log(result.types)
+        // // return result
+        // setPokemon(result)
+        // // console.log(result);
     }
 
+    
+
+    
+    
     useEffect(() => {
-        getPokemon();
+
+        const fetchData = async () => {
+    
+            let response = await getPokemon(id);
+            setPokemon(response)
+            //traitement pour le next et previous
+            // if( id > 1 )
+            // { 
+            //     let previousResponse = await getPokemon(id-1);
+            //     setPreviousPokemon(previousResponse)
+            // }
+            // if( id <151){
+            //     // var nb = ;
+            //     let nextResponse = await getPokemon(parseInt(id)+1);
+            //     setNextPokemon(nextResponse);
+            // }
+            
+        };
+        fetchData();
     }, [])
 
 
     return(
-        
-        
         
         <Paper style={{margin:10, marginTop:20}}>
         <Grid container spacing={2}>
 
             <Grid item container spacing={2} xs={12}>
                 
+                {/* {previousPokemon &&
+                    
                 <Grid item md={6} xs={6} style={{paddingLeft:20}}>
-                    test
-                </Grid>
+                    <Link to={`/pokemon/${previousPokemon.id}`} onClick={fetchData()}>
+                    <Avatar alt={previousPokemon.name} src={previousPokemon.sprites.other.dream_world.front_default} />
+                    <p style={{fontSize:10}}>previous</p></Link>
+                </Grid> }
+                {nextPokemon && 
+                
                 <Grid item md={6} xs={6} style={{textAlign:'right'}}>
-                    test
-                </Grid>
+                    <Link to={`/pokemon/${nextPokemon.id}`} onClick={fetchData()}>
+                    <Avatar alt={nextPokemon.name} src={nextPokemon.sprites.other.dream_world.front_default}/>
+                    <p style={{fontSize:10}}>next</p>
+                    </Link>
+                </Grid>} */}
+
             </Grid>
            
             
