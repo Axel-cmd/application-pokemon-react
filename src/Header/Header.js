@@ -14,7 +14,8 @@ export default function Header(){
           {(popupState) => (
             <React.Fragment>
               <Button variant="contained" {...bindTrigger(popupState)}>
-              <img src={`${process.env.PUBLIC_URL}/logo/engrenage.png`}alt=""/>
+                Setting
+              {/* <img src={`${process.env.PUBLIC_URL}/logo/engrenage.png`}alt=""/> */}
               </Button>
               <Menu {...bindMenu(popupState)}>
                 <MenuItem onClick={popupState.close}>Profile</MenuItem>
