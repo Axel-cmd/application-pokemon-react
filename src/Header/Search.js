@@ -1,5 +1,5 @@
-import React from React;
-import {useState, useEffect} from React;
+import React from 'react';
+import {useState, useEffect} from 'react';
 
 function Search() {
 
@@ -14,7 +14,7 @@ function Search() {
 
     const handleSearchTerm = (e) => {
         let value = e.target.value;
-        value.length > 2 && setSearchTerm(value)
+        value.length > 2 && setSearchTerm(value);
     };
 
     console.log(SearchTerm);
@@ -31,7 +31,7 @@ function Search() {
             />
         </div>
         <div className="search_results">
-            {datas
+            {data
                 .filter ((val) => {
                     return val.title.toLowCase().includes(SearchTerm.toLowCase())
                 })

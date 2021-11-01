@@ -16,9 +16,6 @@ export default function Header(){
     <PopupState className="menu" variant="popover" popupId="demo-popup-menu">
           {(popupState) => (
             <React.Fragment>
-             <Router> 
-               <Route path="/Header" exact component = {Search}/>
-             </Router>
           
               <Button class="button" variant="contained" {...bindTrigger(popupState)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
