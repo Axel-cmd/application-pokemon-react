@@ -4,6 +4,8 @@ import './Header.css'
 import ListPokemon from './listPokemon';
 export default function Header(){
 
+function Search (){
+  const[searchTerm ,setSearchTerm] = useState("");
   return(
 <div className="container-header">
   <img className="img" src={`${process.env.PUBLIC_URL}/logo/pikacu.jpg`}alt=""/>
