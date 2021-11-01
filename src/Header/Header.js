@@ -1,15 +1,15 @@
 import React from 'react'
 import { AppBar, Toolbar, Box, IconButton, Typography, Button, Menu, MenuItem, SearchIcon, FormControl, Select,  } from '@material-ui/core'
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import PopupState, { bindTrigger, bindMenu, } from 'material-ui-popup-state';
 import './Header.css';
+import Dark from './dark';
+
 
 export default function Header(){
 
   return(
 <div className="container-header">
   <img className="img" src={`${process.env.PUBLIC_URL}/logo/Pokeheader.png`}alt=""/>
-
-
 
     <PopupState className="menu" variant="popover" popupId="demo-popup-menu">
           {(popupState) => (
@@ -26,8 +26,16 @@ export default function Header(){
               </Button>
               <Menu {...bindMenu(popupState)}>
 
-                <MenuItem onClick={popupState.close}>Langue----Francais</MenuItem>
+                <MenuItem  class="select" onClick={popupState.close}>Langue</MenuItem>
+                <Select >
+          <MenuItem value={10}>Francais</MenuItem>
+          <MenuItem value={10}>English</MenuItem>
+          <MenuItem value={10}>Espagnol</MenuItem>
+
+        </Select>
                 <MenuItem onClick={popupState.close}>Darkmode</MenuItem>
+              
+
               </Menu>
             </React.Fragment>
           )}

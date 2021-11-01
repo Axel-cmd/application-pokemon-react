@@ -3,13 +3,16 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
 import Header from './Header/Header'
+import Dark from './Header/dark'
+
 function App() {
 
 
   return (
     <>
     <Header/>
-  
+    <Dark/>
+
 
     <BrowserRouter>
       <Switch>
@@ -22,7 +25,7 @@ function App() {
         <Route path="/pokemon/:id" component={PokemonDetail}/>
       </Switch>
     </BrowserRouter>
-  
+
   </>
 );
 }

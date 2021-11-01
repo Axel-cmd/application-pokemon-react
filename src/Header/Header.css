@@ -37,3 +37,13 @@ width: 100%;
   width: 40px;
   height: 40px;
 }
+
+.select{
+  right: 10px;
+}
+
+
+.darkmode{
+  right: 0px;
+  position: absolute;
+}
