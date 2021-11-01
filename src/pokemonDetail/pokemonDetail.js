@@ -38,29 +38,29 @@ export default function PokemonDetail ()
     }
 
     
-
+    const fetchData = async () => {
+    
+        let response = await getPokemon(id);
+        setPokemon(response)
+        //traitement pour le next et previous
+        // if( id > 1 )
+        // { 
+        //     let previousResponse = await getPokemon(id-1);
+        //     setPreviousPokemon(previousResponse)
+        // }
+        // if( id <151){
+        //     // var nb = ;
+        //     let nextResponse = await getPokemon(parseInt(id)+1);
+        //     setNextPokemon(nextResponse);
+        // }
+        
+    };
     
     
     useEffect(() => {
 
-        const fetchData = async () => {
-    
-            let response = await getPokemon(id);
-            setPokemon(response)
-            //traitement pour le next et previous
-            // if( id > 1 )
-            // { 
-            //     let previousResponse = await getPokemon(id-1);
-            //     setPreviousPokemon(previousResponse)
-            // }
-            // if( id <151){
-            //     // var nb = ;
-            //     let nextResponse = await getPokemon(parseInt(id)+1);
-            //     setNextPokemon(nextResponse);
-            // }
-            
-        };
-        fetchData();
+        
+        fetchData();// eslint-disable-next-line
     }, [])
 
 
