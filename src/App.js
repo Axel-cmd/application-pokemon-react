@@ -4,7 +4,6 @@ import ListPokemon from './listPokemon';
 import PokemonDetail from './pokemonDetail/pokemonDetail'
 import Header from './Header/Header'
 import Dark from './Header/dark'
-import Search from './Header/Search'
 
 function App() {
 
@@ -13,8 +12,7 @@ function App() {
     <>
     <Header/>
     <Dark/>
-    <Search/>
-
+    
 
     <BrowserRouter>
       <Switch>
