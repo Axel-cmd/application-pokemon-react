@@ -71,7 +71,7 @@ export default function PokemonDetail ()
 
         
         fetchData();// eslint-disable-next-line
-    }, [])
+    }, [id])
 
 
     return(
